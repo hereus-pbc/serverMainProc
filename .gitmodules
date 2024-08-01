@@ -1,0 +1,6 @@
+[submodule "HereUS-UI-3.1"]
+	path = HereUS-UI-3.1
+	url = https://github.com/hereus-pbc/HereUS-UI-3.1.git
+[submodule "search"]
+	path = search
+	url = https://github.com/hereus-pbc/search.git
