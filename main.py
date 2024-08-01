@@ -20,6 +20,6 @@ if __name__ == '__main__':
         default_network="hereus.net",
     ).run(
         host='0.0.0.0',
-        port=80,
+        port=8000,
         debug=True
     )
