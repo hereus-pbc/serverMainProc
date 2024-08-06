@@ -29,14 +29,14 @@ def get_session_route(r: Request, appname: str) -> Response:
     ]
     current_index = app_order.index(appname)
     if current_index == len(app_order) - 1:
-        return redirect('https://account.hereus.net/')
+        resp = redirect('https://account.hereus.net/')
     else:
         next_app = app_order[current_index + 1]
-        creds = get_session(app.secret, r.query['token'])
         resp = redirect(f'https://{next_app}.hereus.net/get_session?token={r.cookies["s"]}')
-        resp.credentials = creds
-        resp.body = creds['email']
-        return resp
+    creds = get_session(app.secret, r.query['token'])
+    resp.credentials = creds
+    resp.body = creds['email']
+    return resp
 
 
 if __name__ == '__main__':
