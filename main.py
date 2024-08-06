@@ -8,6 +8,7 @@ def get(r: Request) -> Response:
     return redirect('https://github.com/hereus-pbc/serverMainProc')
 
 
+load_dotenv('./.env')
 app = Frame(
     package='net.hereus',
     developer='hereus@hereus.net',
@@ -38,7 +39,6 @@ def get_session(r: Request) -> Response:
 
 
 if __name__ == '__main__':
-    load_dotenv('./.env')
     app.run(
         host='0.0.0.0',
         port=8000,
