@@ -26,7 +26,7 @@ def get_session_route(r: Request, appname: str) -> Response:
     app_order = [
         'search',  # Redirect 2/18
     ]
-    current_index = app_order.index(r.query['token'])
+    current_index = app_order.index(appname)
     if current_index == len(app_order) - 1:
         return redirect('https://account.hereus.net/')
     else:
