@@ -8,3 +8,4 @@ __pycache__/
 *.pyd
 *.pyz
 *.pywz
+requirements.old

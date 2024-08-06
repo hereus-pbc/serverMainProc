@@ -4,3 +4,6 @@
 [submodule "search"]
 	path = search
 	url = https://github.com/hereus-pbc/search.git
+[submodule "account"]
+	path = account
+	url = https://github.com/hereus-pbc/account.git
