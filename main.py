@@ -24,7 +24,8 @@ app = Frame(
 @app.route('/<appname>/src/get_session')
 def get_session_route(r: Request, appname: str) -> Response:
     app_order = [
-        'search',  # Redirect 2/18
+        'account',  # Redirect 1/18
+        'search',   # Redirect 2/18
     ]
     current_index = app_order.index(appname)
     if current_index == len(app_order) - 1:
@@ -34,6 +35,7 @@ def get_session_route(r: Request, appname: str) -> Response:
         creds = get_session(app.secret, r.query['token'])
         resp = redirect(f'https://{next_app}.hereus.net/get_session?token={r.cookies["s"]}')
         resp.credentials = creds
+        resp.body = creds['email']
         return resp
 
 
