@@ -22,7 +22,7 @@ app = Frame(
 
 
 @app.route('/<appname>/src/get_session')
-def get_session(r: Request) -> Response:
+def get_session_route(r: Request, appname: str) -> Response:
     app_order = [
         'search',  # Redirect 2/18
     ]
